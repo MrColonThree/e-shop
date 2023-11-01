@@ -106,6 +106,12 @@ function clickApplyButton() {
     applyButton.style.backgroundColor = "";
   }
 }
+document.getElementById("coupon").addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) { // Enter key
+    event.preventDefault(); // Prevent the default behavior of submitting the form
+    clickApplyButton(); // Call the clickApplyButton function to apply the discount
+  }
+});
 
 function purchaseButtonCondition() {
   if (totalPrice > 0) {
@@ -149,3 +155,7 @@ function resetAllValue() {
 applyButton.addEventListener("click", clickApplyButton);
 applyButtonCondition(); // Initialize apply button state
 updateTotalPrice();
+
+
+
+// http://eshop.upgrade.surge.sh/
