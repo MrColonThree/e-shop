@@ -5,4 +5,4 @@
 
 ## Live Link :
 
-http://eshop.mrcolonthree.surge.sh/
+https://abdullah-al-monir.github.io/e-shop

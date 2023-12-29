@@ -45,13 +45,13 @@ function addItemToList(itemName) {
   li.classList.add("items");
   selectedItems.appendChild(li);
   const serial = document.createElement("p");
-  serial.innerText = "1"; // Initial quantity is 1
+  serial.innerText = "1";
   li.appendChild(serial);
 }
 
 function updateSelectedItem(itemName, quantity) {
   const items = document.querySelectorAll(".items");
-  items.forEach(item => {
+  items.forEach((item) => {
     if (item.innerText.includes(itemName)) {
       const quantityElement = item.querySelector("p");
       quantityElement.innerText = quantity.toString();
@@ -82,7 +82,7 @@ function updateDiscountAndTotal() {
 function applyButtonCondition() {
   if (totalPrice >= 200) {
     applyButton.removeAttribute("disabled");
-    applyButton.style.backgroundColor = "#e527b2";
+    applyButton.style.backgroundColor = "#1c94d4";
   } else {
     applyButton.setAttribute("disabled", true);
     applyButton.style.backgroundColor = "";
@@ -106,17 +106,17 @@ function clickApplyButton() {
     applyButton.style.backgroundColor = "";
   }
 }
-document.getElementById("coupon").addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) { // Enter key
-    event.preventDefault(); // Prevent the default behavior of submitting the form
-    clickApplyButton(); // Call the clickApplyButton function to apply the discount
+document.getElementById("coupon").addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    clickApplyButton();
   }
 });
 
 function purchaseButtonCondition() {
   if (totalPrice > 0) {
     purchaseButton.removeAttribute("disabled");
-    purchaseButton.style.backgroundColor = "#e527b2";
+    purchaseButton.style.backgroundColor = "#1c94d4";
   } else {
     purchaseButton.setAttribute("disabled", true);
     purchaseButton.style.backgroundColor = "";
@@ -136,7 +136,7 @@ function resetAllValue() {
   selectedItemPrices = [];
   discountApplied = false;
   applyButtonUsed = false;
-  itemsMap.clear(); // Clear the itemsMap
+  itemsMap.clear(); 
 
   applyButton.setAttribute("disabled", true);
   applyButton.style.backgroundColor = "";
@@ -144,18 +144,16 @@ function resetAllValue() {
   purchaseButton.setAttribute("disabled", true);
   purchaseButton.style.backgroundColor = "";
 
-   // Clear the 'items' class and heading content
-   const heading = document.getElementById('heading');
-   heading.classList.remove("items");
-   heading.innerHTML = "";
+  
+  const heading = document.getElementById("heading");
+  heading.classList.remove("items");
+  heading.innerHTML = "";
 
   window.location.href = "#home";
 }
 
 applyButton.addEventListener("click", clickApplyButton);
-applyButtonCondition(); // Initialize apply button state
+applyButtonCondition(); 
 updateTotalPrice();
 
-
-
-// http://eshop.upgrade.surge.sh/
+// http://eshop.upgrade.surge.sh
